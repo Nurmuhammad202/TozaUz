@@ -1,6 +1,8 @@
 package uz.toza.tozauz.ui.fragment.notifications
 
+import android.content.ContentValues.TAG
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -32,6 +34,8 @@ class NotificationsFragment : Fragment() {
         notificationsViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }
+
+        Log.d(TAG, "onCreateView: dfdfds")
         return root
     }
 

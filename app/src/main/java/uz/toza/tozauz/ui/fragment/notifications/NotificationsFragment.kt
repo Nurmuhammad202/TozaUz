@@ -1,4 +1,4 @@
-package uz.toza.tozauz.ui.notifications
+package uz.toza.tozauz.ui.fragment.notifications
 
 import android.os.Bundle
 import android.view.LayoutInflater

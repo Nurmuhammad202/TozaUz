@@ -1,17 +1,44 @@
 <resources>
     <string name="app_name">TozaUz</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
-    <!-- TODO: Remove or change this placeholder text -->
+    <string name="title_home">Главная</string>
+    <string name="title_dashboard">История</string>
+    <string name="title_notifications">Перевод денги</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <!-- Strings related to login -->
-    <string name="prompt_email">Email</string>
-    <string name="prompt_password">Password</string>
-    <string name="action_sign_in">Sign in or register</string>
-    <string name="action_sign_in_short">Sign in</string>
-    <string name="welcome">"Welcome!"</string>
-    <string name="invalid_username">Not a valid username</string>
-    <string name="invalid_password">Password must be >5 characters</string>
+
     <string name="login_failed">"Login failed"</string>
+    <string name="language_change">Выберите язык</string>
+    <string name="txt_language_ozbek">Uzbek</string>
+    <string name="txt_language_rus">Русский</string>
+    <string name="registerSimple">Вход</string>
+    <string name="auth_phone_title">Войти в систему</string>
+    <string name="phone_auth_text">Через номер телефона</string>
+    <string name="text_phone">Номер телефона</string>
+    <string name="fragment_login_phone_sms">Наш номер придёт СМС с кодом подверждение</string>
+    <string name="signIn">Войти</string>
+    <string name="numberDoesntExist">В систему отсуствует такой номер</string>
+    <string name="enterSomething">Ввидени что-то</string>
+    <string name="smsBack">Вход</string>
+    <string name="enterCode">Войти код-парол</string>
+    <string name="sendSMStoNum">На ваш номер +998 90 568 1015\n отправлен SMS с кодо</string>
+    <string name="sendAgain"><u>Отправит занова</u></string>
+    <string name="continue_">Продолжить</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="home_interare_fragment_list_details">Клиенты</string>
+    <string name="fragment_balance_history_toolbar">История пополнения</string>
+    <string name="fragment_post_details_date">C</string>
+    <string name="fragment_post_details_to_date">По</string>
+    <string name="home_taxi_client_filter_clock_date">01 авг 2021</string>
+    <string name="save">Сохранить</string>
+    <string name="date">Дата</string>
+    <string name="_2023_01_25_19_11_11">2023-01-25 19:11:11</string>
+    <string name="_200_so_m">200 so\'m</string>
+    <string name="go_image">сделать фото</string>
 </resources>

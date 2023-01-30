@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/green"
+    android:orientation="vertical"
+    tools:context=".ui.fragment.login.LoginSelectFragment">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="6" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:fontFamily="@font/inter_bold"
+            android:gravity="center"
+            android:text="@string/language_change"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_24sp"
+            tools:ignore="NestedWeights" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1.4"
+            android:orientation="horizontal"
+            tools:ignore="DisableBaselineAlignment">
+
+            <LinearLayout
+                android:id="@+id/btn_ru"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginVertical="@dimen/margin_padding_12dp"
+                android:layout_marginStart="@dimen/margin_padding_12dp"
+                android:layout_marginEnd="@dimen/margin_padding_4dp"
+                android:layout_weight="1"
+                android:background="@drawable/ic_item_contener"
+                android:orientation="horizontal"
+                tools:ignore="NestedWeights">
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:padding="@dimen/margin_padding_12dp"
+                    android:src="@drawable/ic_ru_flag"
+                    tools:ignore="ContentDescription,NestedWeights" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:fontFamily="@font/inter_regular"
+                    android:gravity="center|left"
+                    android:text="@string/txt_language_rus"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_20sp"
+                    tools:ignore="RtlHardcoded" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/btn_uzb"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginVertical="@dimen/margin_padding_12dp"
+                android:layout_marginStart="@dimen/margin_padding_4dp"
+                android:layout_marginEnd="@dimen/margin_padding_12dp"
+                android:layout_weight="1"
+                android:background="@drawable/ic_item_contener"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:padding="@dimen/margin_padding_12dp"
+                    android:src="@drawable/ic_uzb_flag"
+                    tools:ignore="ContentDescription,NestedWeights" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:fontFamily="@font/inter_regular"
+                    android:gravity="center|left"
+                    android:text="@string/txt_language_ozbek"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_20sp"
+                    tools:ignore="RtlHardcoded" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.5"
+            tools:ignore="UselessLeaf" />
+    </LinearLayout>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/login_navigation"
+    app:startDestination="@id/loginSelectFragment">
+
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="uz.toza.tozauz.ui.fragment.login.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_otpSmsFragment"
+            app:destination="@id/otpSmsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginSelectFragment"
+        android:name="uz.toza.tozauz.ui.fragment.login.LoginSelectFragment"
+        android:label="fragment_login_select"
+        tools:layout="@layout/fragment_login_select" >
+        <action
+            android:id="@+id/action_loginSelectFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/otpSmsFragment"
+        android:name="uz.toza.tozauz.ui.fragment.login.OtpSmsFragment"
+        android:label="fragment_otp_sms"
+        tools:layout="@layout/fragment_otp_sms" />
+</navigation>

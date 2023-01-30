@@ -1,22 +1,174 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.fragment.notifications.NotificationsFragment">
+    android:background="@color/gray"
+    android:orientation="vertical"
+    tools:context=".ui.fragment.notifications.BalanceFragment">
 
-    <TextView
-        android:id="@+id/text_notifications"
+    <RelativeLayout
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:elevation="@dimen/margin_padding_4dp"
+        tools:ignore="UnusedAttribute">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:fontFamily="@font/inter_medium"
+            android:text="@string/fragment_balance"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_20sp"
+            tools:ignore="RelativeOverlap" />
+
+
+    </RelativeLayout>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="158dp"
+        android:layout_marginHorizontal="@dimen/margin_padding_8dp"
+        android:layout_marginTop="32dp"
+        app:cardCornerRadius="@dimen/text_size_12sp">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/mainCard"
+            android:layout_width="match_parent"
+            android:layout_height="158dp"
+            android:layout_gravity="center"
+            android:background="@color/green"
+            android:orientation="horizontal">
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/ic_wave_card"
+                android:scaleType="centerCrop" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="158dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/txt_card_type"
+                    android:layout_width="60dp"
+                    android:layout_height="30dp"
+                    android:layout_marginStart="@dimen/text_size_16sp"
+                    android:layout_marginTop="@dimen/margin_padding_20dp"
+                    android:src="@drawable/humo_card"
+                    tools:ignore="ContentDescription,HardcodedText" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txt_active"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/margin_padding_8dp"
+                    android:layout_marginTop="@dimen/text_size_8sp"
+                    android:background="@drawable/avtive_style"
+                    android:fontFamily="@font/inter_medium"
+                    android:paddingHorizontal="@dimen/margin_padding_8dp"
+                    android:text="@string/balance_avtive"
+                    android:textColor="@color/black"
+                    android:textSize="10sp"
+                    tools:ignore="HardcodedText,SmallSp" />
+
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/txt_card_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|left"
+                android:layout_marginStart="@dimen/text_size_16sp"
+                android:layout_marginTop="@dimen/margin_padding_16dp"
+                android:fontFamily="@font/inter_medium"
+                android:text="Карта SQB"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_15sp"
+                tools:ignore="RtlHardcoded" />
+
+
+            <TextView
+                android:id="@+id/txt_card_balance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|left"
+                android:layout_marginStart="@dimen/text_size_16sp"
+                android:layout_marginTop="@dimen/margin_padding_36dp"
+                android:fontFamily="@font/inter_bold"
+                android:text="450 000.25 сум"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_15sp"
+                tools:ignore="RtlHardcoded" />
+
+            <TextView
+                android:id="@+id/txt_card_numer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|end"
+                android:layout_marginTop="@dimen/margin_padding_36dp"
+                android:layout_marginEnd="@dimen/text_size_16sp"
+                android:fontFamily="@font/inter_regular"
+                android:text="8600 03** **** 9696"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_15sp" />
+
+
+        </FrameLayout>
+    </androidx.cardview.widget.CardView>
+
+    <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        app:cardCornerRadius="@dimen/margin_padding_16dp"
+        android:layout_marginHorizontal="@dimen/margin_padding_12dp"
+        android:layout_marginTop="@dimen/margin_padding_48dp">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/margin_padding_16dp"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:layout_width="match_parent"
+                android:inputType="number"
+                android:layout_marginTop="@dimen/margin_padding_8dp"
+                android:paddingHorizontal="@dimen/margin_padding_8dp"
+                android:layout_height="@dimen/margin_padding_48dp"
+                android:layout_marginHorizontal="@dimen/margin_padding_8dp"
+                android:background="@drawable/ic_item_contener_border_edit_style"
+                android:hint="5 000"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_sms_code"
+                style="@style/Button60015"
+                android:layout_marginBottom="@dimen/margin_padding_8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_padding_16dp"
+                android:padding="@dimen/margin_padding_16dp"
+                android:text="@string/save" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </com.google.android.material.card.MaterialCardView>
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>

@@ -41,4 +41,13 @@
     <string name="_2023_01_25_19_11_11">2023-01-25 19:11:11</string>
     <string name="_200_so_m">200 so\'m</string>
     <string name="go_image">сделать фото</string>
+    <string name="balance_avtive">ОCНОВНАЯ</string>
+    <string name="fragment_balance">Баланс</string>
+    <string name="fragment_add_card_toolbar">Привязать карту</string>
+    <string name="fragment_balance_add_card_add_card_title">Введите данные карты</string>
+    <string name="fragment_balance_sort_card">Название карты</string>
+    <string name="fragment_balance_add_card_number_card">Номер карты</string>
+    <string name="fragment_balance_add_card_srok_date">Срок действия</string>
+    <string name="fragment_balance_add_sms_code">Такая карта отсуствует</string>
+    <string name="back">Назад</string>
 </resources>

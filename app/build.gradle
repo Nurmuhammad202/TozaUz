@@ -60,5 +60,10 @@ dependencies {
     ///sms input layout...
     implementation 'com.github.mukeshsolanki:android-otpview-pinview:2.1.2'
 
+    //qrcode
+    implementation 'com.github.yuriy-budiyev:code-scanner:2.3.2'
+
+    //require permission
+    implementation 'com.karumi:dexter:6.2.3'
 
 }

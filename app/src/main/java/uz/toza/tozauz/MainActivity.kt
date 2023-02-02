@@ -1,6 +1,9 @@
 package uz.toza.tozauz
 
+import android.animation.Animator
+import android.animation.AnimatorListenerAdapter
 import android.os.Bundle
+import android.view.View
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
@@ -33,7 +36,28 @@ class MainActivity : AppCompatActivity() {
             )
         )
 
+        navController.addOnDestinationChangedListener { _, destination, _ ->
+            when (destination.id) {
+                R.id.navigation_home -> showBottomNav()
+                R.id.navigation_dashboard -> showBottomNav()
+                R.id.navigation_notifications -> showBottomNav()
+                else -> hideBottomNav()
+            }
+        }
+
         setupWithNavController(binding.navView, navController)
+    }
+
+    //show bottom nav...
+    private fun showBottomNav() {
+        binding.navView.visibility = View.VISIBLE
+    }
+
+    //hide bottom nav
+    private fun hideBottomNav() {
+        // binding.toolbar.setNavigationIcon(R.drawable.ic_back_icon)
+        // binding.bottomNav.visibility = View.GONE
+        binding.navView.visibility = View.GONE
     }
 
     override fun onSupportNavigateUp(): Boolean {

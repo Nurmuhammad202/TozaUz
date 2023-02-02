@@ -50,4 +50,5 @@
     <string name="fragment_balance_add_card_srok_date">Срок действия</string>
     <string name="fragment_balance_add_sms_code">Такая карта отсуствует</string>
     <string name="back">Назад</string>
+    <string name="error">не доступ!!</string>
 </resources>

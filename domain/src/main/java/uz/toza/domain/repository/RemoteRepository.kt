@@ -1,9 +1,6 @@
 package uz.toza.domain.repository
 
-import uz.toza.domain.model.BalanceUseCaseModel
-import uz.toza.domain.model.BodyHistoryModel
-import uz.toza.domain.model.GetOrderHistory
-import uz.toza.domain.model.MyProfile
+import uz.toza.domain.model.*
 
 interface RemoteRepository {
     suspend fun postQrCode(qrCode: String, userId: Long): Boolean
@@ -12,7 +9,7 @@ interface RemoteRepository {
 
     suspend fun getHistory(bodyHistoryModel: BodyHistoryModel): GetOrderHistory
 
-    suspend fun qrToday(userId: Long): Boolean
+    suspend fun qrToday(userId: Long): QrCodeToday
 
     suspend fun myProfile(userId: Long):MyProfile
 }

@@ -1,17 +1,11 @@
 package uz.toza.data.repository
 
-import android.content.res.Resources
-import retrofit2.Response
 import uz.toza.data.extension.success
 import uz.toza.data.remote.ApiInterface
 import uz.toza.data.remote.module.balance.BodyBalance
-import uz.toza.data.remote.module.balance.GetBalance
 import uz.toza.data.remote.module.hisotry.BodyHistory
 import uz.toza.data.remote.module.qrCode.BodyQrCode
-import uz.toza.domain.model.BalanceUseCaseModel
-import uz.toza.domain.model.BodyHistoryModel
-import uz.toza.domain.model.GetOrderHistory
-import uz.toza.domain.model.MyProfile
+import uz.toza.domain.model.*
 import uz.toza.domain.repository.RemoteRepository
 
 class RemoteRepositoryIml(private val apiInterface: ApiInterface) : RemoteRepository {
@@ -44,9 +38,9 @@ class RemoteRepositoryIml(private val apiInterface: ApiInterface) : RemoteReposi
         if (success(response)) {
             response.body()?.let {
                 return GetOrderHistory(
-                    finish_at = it.finish_at,
+                    finish_at = it.finish_at ?: "",
                     qr_info = it.qr_info,
-                    start_at = it.start_at,
+                    start_at = it.start_at ?: "",
                     status = it.status
                 )
             }
@@ -54,14 +48,14 @@ class RemoteRepositoryIml(private val apiInterface: ApiInterface) : RemoteReposi
         return GetOrderHistory("", mutableListOf(), "0", "error")
     }
 
-    override suspend fun qrToday(userId: Long): Boolean {
+    override suspend fun qrToday(userId: Long): QrCodeToday {
         val response = apiInterface.qrToday(BodyBalance(userId = userId))
         if (success(response)) {
             response.body()?.let {
-                return true
+                return QrCodeToday(it.qr_info, it.status)
             }
         }
-        return false
+        return QrCodeToday(mutableListOf(), "")
     }
 
     override suspend fun myProfile(userId: Long): MyProfile {
@@ -71,7 +65,7 @@ class RemoteRepositoryIml(private val apiInterface: ApiInterface) : RemoteReposi
                 return MyProfile(it.account, it.name, it.phone, it.status, it.tarif, it.username)
             }
         }
-        return MyProfile("","","","", mutableListOf(),"")
+        return MyProfile("", "", "", "", mutableListOf(), "")
     }
 }
 

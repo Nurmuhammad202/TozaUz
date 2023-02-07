@@ -17,22 +17,13 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:id="@+id/txt_title"
             android:gravity="center|left"
             android:text="EP"
             android:fontFamily="@font/inter_medium"
             android:textColor="@color/black"
             tools:ignore="HardcodedText,RtlHardcoded" />
 
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center|right"
-            android:text="@string/_200_so_m"
-            android:fontFamily="@font/inter_regular"
-            android:textColor="@color/black"
-            tools:ignore="RtlHardcoded" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -45,6 +36,17 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:id="@+id/txt_price"
+            android:gravity="center|left"
+            android:text="@string/_200_so_m"
+            android:fontFamily="@font/inter_regular"
+            android:textColor="@color/black"
+            tools:ignore="RtlHardcoded" />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:id="@+id/txt_date"
             android:gravity="center|right"
             android:text="@string/_2023_01_25_19_11_11"
             android:fontFamily="@font/inter_regular"

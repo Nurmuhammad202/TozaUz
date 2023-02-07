@@ -18,6 +18,7 @@
             android:gravity="right|center"
             android:textColor="@color/black"
             android:paddingEnd="@dimen/margin_padding_16dp"
+            android:id="@+id/txt_price"
             android:fontFamily="@font/inter_medium"
             android:text="160 000 сум"
             tools:ignore="RtlHardcoded,RtlSymmetry" />
@@ -34,8 +35,9 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/inter_bold"
             android:text="Штуки:10"
+            android:id="@+id/txt_one"
             android:textColor="@color/black"
-            android:textSize="@dimen/text_size_24sp" />
+            android:textSize="@dimen/text_size_18sp" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="wrap_content"
@@ -43,7 +45,8 @@
             android:fontFamily="@font/inter_bold"
             android:text="Сумми:10 000 сум"
             android:textColor="@color/black"
-            android:textSize="@dimen/text_size_24sp" />
+            android:id="@+id/txt_two"
+            android:textSize="@dimen/text_size_18sp" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_go"

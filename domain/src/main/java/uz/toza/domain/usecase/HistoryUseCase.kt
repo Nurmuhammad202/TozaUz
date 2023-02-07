@@ -3,11 +3,12 @@ package uz.toza.domain.usecase
 import uz.toza.domain.model.BodyHistoryModel
 import uz.toza.domain.model.GetOrderHistory
 import uz.toza.domain.model.QrInfo
+import uz.toza.domain.repository.LocalRepository
 import uz.toza.domain.repository.RemoteRepository
 
-class HistoryUseCase(private val remoteRepository: RemoteRepository) {
+class HistoryUseCase(private val remoteRepository: RemoteRepository,private val localRepository: LocalRepository) {
     suspend fun execute(startTime: String, endTime: String): ArrayList<QrInfo> {
-        val bodyHistoryModel = BodyHistoryModel(endTime, startTime, 1)
+        val bodyHistoryModel = BodyHistoryModel(endTime, startTime, localRepository.getLongId().toInt())
         val response = remoteRepository.getHistory(bodyHistoryModel)
         val qrInfo = ArrayList<QrInfo>()
         response.qr_info.forEach {

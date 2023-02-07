@@ -4,6 +4,7 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.components.ViewModelComponent
+import uz.toza.domain.repository.LocalRepository
 import uz.toza.domain.repository.RemoteRepository
 import uz.toza.domain.usecase.*
 
@@ -12,28 +13,58 @@ import uz.toza.domain.usecase.*
 class DomainModule {
 
     @Provides
-    fun provideGetBalance(remoteRepository: RemoteRepository): GetBalanceUseCase {
-        return GetBalanceUseCase(remoteRepository = remoteRepository)
+    fun provideGetBalance(
+        remoteRepository: RemoteRepository,
+        localRepository: LocalRepository
+    ): GetBalanceUseCase {
+        return GetBalanceUseCase(
+            remoteRepository = remoteRepository,
+            localRepository = localRepository
+        )
     }
 
 
     @Provides
-    fun provideHistory(remoteRepository: RemoteRepository): HistoryUseCase {
-        return HistoryUseCase(remoteRepository = remoteRepository)
+    fun provideHistory(
+        remoteRepository: RemoteRepository,
+        localRepository: LocalRepository
+    ): HistoryUseCase {
+        return HistoryUseCase(
+            remoteRepository = remoteRepository,
+            localRepository = localRepository
+        )
     }
 
     @Provides
-    fun providePostQr(remoteRepository: RemoteRepository): PostQrCodeUseCase {
-        return PostQrCodeUseCase(remoteRepository = remoteRepository)
+    fun providePostQr(
+        remoteRepository: RemoteRepository,
+        localRepository: LocalRepository
+    ): PostQrCodeUseCase {
+        return PostQrCodeUseCase(
+            remoteRepository = remoteRepository,
+            localRepository = localRepository
+        )
     }
 
     @Provides
-    fun provideProfile(remoteRepository: RemoteRepository): ProfileUseCase {
-        return ProfileUseCase(remoteRepository = remoteRepository)
+    fun provideProfile(
+        remoteRepository: RemoteRepository,
+        localRepository: LocalRepository
+    ): ProfileUseCase {
+        return ProfileUseCase(
+            remoteRepository = remoteRepository,
+            localRepository = localRepository
+        )
     }
 
     @Provides
-    fun provideQrToday(remoteRepository: RemoteRepository): QrTodayUseCase {
-        return QrTodayUseCase(remoteRepository = remoteRepository)
+    fun provideQrToday(
+        remoteRepository: RemoteRepository,
+        localRepository: LocalRepository
+    ): QrTodayUseCase {
+        return QrTodayUseCase(
+            remoteRepository = remoteRepository,
+            localRepository = localRepository
+        )
     }
 }

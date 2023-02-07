@@ -17,6 +17,8 @@ import dagger.hilt.android.AndroidEntryPoint
 import uz.toza.tozauz.databinding.FragmentDashboardBinding
 import uz.toza.tozauz.ui.adapter.HistoryAdapter
 import uz.toza.tozauz.ui.dialog.DatePicter.DataPicterDialog
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
 
 @AndroidEntryPoint
 class HistoryFragment : Fragment() {
@@ -40,10 +42,16 @@ class HistoryFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        dashboardViewModel.getHistory("01.01.2023", "02.01.2023")
 
 
         binding.apply {
+            val dateTime = LocalDateTime.now()
+            val formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy")
+            txtFromDay.text = dateTime.format(formatter)
+            txtToDay.text = dateTime.format(formatter)
+            dashboardViewModel.getHistory(txtFromDay.text.toString(), txtToDay.text.toString())
+            loader.visibility = View.VISIBLE
+
             btnLeft.setOnClickListener {
                 showDialog(1)
             }
@@ -54,19 +62,26 @@ class HistoryFragment : Fragment() {
             recyclerview.layoutManager = LinearLayoutManager(requireContext())
             dashboardViewModel.getOrderHistory.observe(requireActivity()) {
                 recyclerview.adapter = HistoryAdapter(it)
-                binding.loader.visibility=View.GONE
+                binding.loader.visibility = View.GONE
             }
         }
     }
 
     @RequiresApi(Build.VERSION_CODES.O)
     private fun showDialog(type: Int) {
-        val dialog = DataPicterDialog(requireContext(), type = type.toString())
+        val dialog = DataPicterDialog(requireContext(), type = type.toString()) {
+            binding.apply {
+                if (type == 1) {
+                    txtFromDay.text = it
+                } else {
+                    txtToDay.text = it
+                }
+                loader.visibility = View.VISIBLE
+                dashboardViewModel.getHistory(txtFromDay.text.toString(), txtToDay.text.toString())
+
+            }
+        }
         dialog.show()
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
-    }
 }

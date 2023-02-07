@@ -1,4 +1,4 @@
-package uz.toza.data.local
+package uz.toza.domain.repository
 
 interface LocalRepository {
 

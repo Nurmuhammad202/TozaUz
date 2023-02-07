@@ -4,8 +4,9 @@ import android.content.Context
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
+import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
-import uz.toza.data.local.LocalRepository
+import uz.toza.domain.repository.LocalRepository
 import uz.toza.data.remote.ApiInterface
 import uz.toza.data.remote.retrofitBuilder.RetrofitBuilder
 import uz.toza.data.repository.RemoteRepositoryIml
@@ -31,7 +32,9 @@ class AppModule {
 
     @Provides
     @Singleton
-    fun provideSharedPref(context: Context): LocalRepository {
+    fun provideSharedPref(@ApplicationContext context: Context): LocalRepository {
         return SharedPrefRepository(context)
     }
+
+
 }

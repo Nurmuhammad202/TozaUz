@@ -1,8 +1,7 @@
 package uz.toza.data.repository
 
 import android.content.Context
-import android.content.SharedPreferences
-import uz.toza.data.local.LocalRepository
+import uz.toza.domain.repository.LocalRepository
 
 const val SHARED_PREF_NAME = "sharedPrefName"
 const val SHARED_USER_ID = "sharedUserId"
@@ -19,7 +18,7 @@ class SharedPrefRepository(context: Context) : LocalRepository {
     }
 
     override fun getLongId(): Long {
-        return sharedPreferences.getLong(SHARED_USER_ID, 0)
+        return sharedPreferences.getLong(SHARED_USER_ID, 1)
     }
 
     override fun saveLang(lang: String) {

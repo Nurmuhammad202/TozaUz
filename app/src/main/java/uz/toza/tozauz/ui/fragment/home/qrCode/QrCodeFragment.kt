@@ -6,17 +6,22 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.budiyev.android.codescanner.CodeScanner
 import com.budiyev.android.codescanner.CodeScannerView
 import com.budiyev.android.codescanner.DecodeCallback
+import dagger.hilt.android.AndroidEntryPoint
 import uz.toza.tozauz.R
 import uz.toza.tozauz.databinding.FragmentQrCodeBinding
+import uz.toza.tozauz.ui.fragment.home.HomeViewModel
 
+@AndroidEntryPoint
 class QrCodeFragment : Fragment() {
     private var _binding: FragmentQrCodeBinding? = null
     private val binding get() = requireNotNull(_binding)
     private lateinit var codeScanner: CodeScanner
+    private val homeViewModel: HomeViewModel by viewModels()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View {
@@ -32,9 +37,17 @@ class QrCodeFragment : Fragment() {
         codeScanner.decodeCallback = DecodeCallback {
             activity.runOnUiThread {
                 Toast.makeText(requireActivity(), it.text, Toast.LENGTH_SHORT).show()
+                homeViewModel.postQrCode(it.text)
+
+            }
+        }
+
+        homeViewModel.success.observe(requireActivity()) {
+            if (it) {
                 findNavController().popBackStack()
             }
         }
+
         scannerView.setOnClickListener {
             codeScanner.startPreview()
         }

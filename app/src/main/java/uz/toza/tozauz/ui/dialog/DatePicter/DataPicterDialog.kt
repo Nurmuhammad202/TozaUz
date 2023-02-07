@@ -13,7 +13,7 @@ import uz.toza.tozauz.databinding.ItemPrrofileDataDialogLayoutBinding
 import java.util.*
 
 @RequiresApi(Build.VERSION_CODES.O)
-class DataPicterDialog(context: Context, var type: String) :
+class DataPicterDialog(context: Context, var type:String,var success: (String) -> Unit) :
     AlertDialog(context) {
     private val binding = ItemPrrofileDataDialogLayoutBinding.inflate(LayoutInflater.from(context))
 
@@ -34,22 +34,18 @@ class DataPicterDialog(context: Context, var type: String) :
 //       binding.datePicker.maxDate=calendar.timeInMillis
 
 
-
         binding.apply {
             btClose.setOnClickListener {
                 dismiss()
             }
 
             btnSave.setOnClickListener {
-                val day:String = if (binding.datePicker.dayOfMonth < 10) {
+                val day: String = if (binding.datePicker.dayOfMonth < 10) {
                     "0${binding.datePicker.dayOfMonth}"
                 } else {
                     binding.datePicker.dayOfMonth.toString()
                 }
-//            date.transData(
-//                "${day}.${binding.datePicker.month}.${binding.datePicker.year}",
-//                type
-//            )
+                success("${day}.${binding.datePicker.month}.${binding.datePicker.year}")
                 dismiss()
             }
         }

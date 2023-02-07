@@ -2,12 +2,13 @@ package uz.toza.domain.usecase
 
 import uz.toza.domain.model.QrCodeConvert
 import uz.toza.domain.model.QrCodeToday
+import uz.toza.domain.repository.LocalRepository
 import uz.toza.domain.repository.RemoteRepository
 
-class QrTodayUseCase(private val remoteRepository: RemoteRepository) {
+class QrTodayUseCase(private val remoteRepository: RemoteRepository, private val localRepository: LocalRepository) {
 
-    suspend fun getQrToday(userId: Long): ArrayList<QrCodeConvert> {
-        val response = remoteRepository.qrToday(userId = userId)
+    suspend fun getQrToday(): ArrayList<QrCodeConvert> {
+        val response = remoteRepository.qrToday(userId = localRepository.getLongId())
         val qrCodeConvert = ArrayList<QrCodeConvert>()
         response.qr_info.forEach {
             val type = it.split("\"name\":")[1].split("\"balance\"")[0]

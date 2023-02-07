@@ -17,3 +17,4 @@ dependencyResolutionManagement {
 rootProject.name = "TozaUz"
 include ':app'
 include ':data'
+include ':domain'

@@ -5,4 +5,4 @@ data class QrCodeToday(
     val status: String
 )
 
-data class QrCodeConvert(var type: String, var summa: String)
+data class QrCodeConvert(var balance: String, var summa: String)

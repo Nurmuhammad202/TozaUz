@@ -40,7 +40,7 @@
     <string name="date">Дата</string>
     <string name="_2023_01_25_19_11_11">2023-01-25 19:11:11</string>
     <string name="_200_so_m">200 so\'m</string>
-    <string name="go_image">сделать фото</string>
+    <string name="go_image">Добавить</string>
     <string name="balance_avtive">ОCНОВНАЯ</string>
     <string name="fragment_balance">Баланс</string>
     <string name="fragment_add_card_toolbar">Привязать карту</string>
@@ -51,4 +51,6 @@
     <string name="fragment_balance_add_sms_code">Такая карта отсуствует</string>
     <string name="back">Назад</string>
     <string name="error">не доступ!!</string>
+    <string name="count">Количество</string>
+    <string name="type">Тип мишка</string>
 </resources>

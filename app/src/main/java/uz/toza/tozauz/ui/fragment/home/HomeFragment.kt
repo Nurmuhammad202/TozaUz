@@ -51,8 +51,8 @@ class HomeFragment : Fragment() {
             }
 
             homeViewModel.qrCodeToday.observe(requireActivity()) {
-                txtOne.text = "${it[0].type}  ${it[0].summa}"
-                txtTwo.text = "${it[1].type}  ${it[1].summa}"
+                txtOne.text = it[0].balance
+                txtTwo.text = it[1].balance
             }
 
             btnGo.setOnClickListener {

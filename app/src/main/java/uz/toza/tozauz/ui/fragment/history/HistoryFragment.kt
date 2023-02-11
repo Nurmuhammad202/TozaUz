@@ -61,7 +61,9 @@ class HistoryFragment : Fragment() {
             }
             recyclerview.layoutManager = LinearLayoutManager(requireContext())
             dashboardViewModel.getOrderHistory.observe(requireActivity()) {
-                recyclerview.adapter = HistoryAdapter(it)
+                recyclerview.adapter = HistoryAdapter(it.list)
+                txtOne.text = it.type1.toString()
+                txtTwo.text = it.type2.toString()
                 binding.loader.visibility = View.GONE
             }
         }

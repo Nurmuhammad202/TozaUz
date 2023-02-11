@@ -4,9 +4,9 @@ import kotlinx.coroutines.runBlocking
 import org.junit.Assert
 import org.junit.Before
 import org.junit.Test
-import uz.toza.data.remote.module.balance.BodyBalance
-import uz.toza.data.remote.module.hisotry.BodyHistory
-import uz.toza.data.remote.module.qrCode.BodyQrCode
+import uz.toza.data.remote.model.balance.BodyBalance
+import uz.toza.data.remote.model.hisotry.BodyHistory
+import uz.toza.data.remote.model.qrCode.BodyQrCode
 import uz.toza.data.remote.retrofitBuilder.RetrofitBuilder
 
 class RetrofitTest {

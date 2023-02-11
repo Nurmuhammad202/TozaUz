@@ -1,4 +1,4 @@
-package uz.toza.data.remote.module.hisotry
+package uz.toza.data.remote.model.hisotry
 
 data class BodyHistory(
     val finish_id: String,

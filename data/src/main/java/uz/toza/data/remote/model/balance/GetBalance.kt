@@ -1,4 +1,4 @@
-package uz.toza.data.remote.module.balance
+package uz.toza.data.remote.model.balance
 
 data class GetBalance(
     val balance: String,

@@ -1,4 +1,4 @@
-package uz.toza.data.remote.module.history
+package uz.toza.data.remote.model.history
 
 data class MyProfile(
     val account: Any,

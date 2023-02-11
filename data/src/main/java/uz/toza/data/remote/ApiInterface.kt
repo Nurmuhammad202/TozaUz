@@ -3,15 +3,14 @@ package uz.toza.data.remote
 import retrofit2.Response
 import retrofit2.http.Body
 import retrofit2.http.POST
-import uz.toza.data.remote.module.balance.BodyBalance
-import uz.toza.data.remote.module.balance.GetBalance
-import uz.toza.data.remote.module.baseResponse.BaseResponse
-import uz.toza.data.remote.module.hisotry.BodyHistory
-import uz.toza.data.remote.module.hisotry.GetHistory
-import uz.toza.data.remote.module.history.MyProfile
-import uz.toza.data.remote.module.qrCode.BodyQrCode
-import uz.toza.data.remote.module.qrCode.GetQrCodeResponse
-import uz.toza.data.remote.module.today.TodayModel
+import uz.toza.data.remote.model.balance.BodyBalance
+import uz.toza.data.remote.model.balance.GetBalance
+import uz.toza.data.remote.model.hisotry.BodyHistory
+import uz.toza.data.remote.model.hisotry.GetHistory
+import uz.toza.data.remote.model.history.MyProfile
+import uz.toza.data.remote.model.qrCode.BodyQrCode
+import uz.toza.data.remote.model.qrCode.GetQrCodeResponse
+import uz.toza.data.remote.model.today.TodayModel
 
 interface ApiInterface {
 

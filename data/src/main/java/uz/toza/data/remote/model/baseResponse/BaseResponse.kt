@@ -1,4 +1,4 @@
-package uz.toza.data.remote.module.baseResponse
+package uz.toza.data.remote.model.baseResponse
 
 data class BaseResponse<T>(
     val successful: Boolean,

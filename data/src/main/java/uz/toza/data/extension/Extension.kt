@@ -1,7 +1,6 @@
 package uz.toza.data.extension
 
 import retrofit2.Response
-import uz.toza.data.remote.module.qrCode.GetQrCodeResponse
 
 fun <T> success(data: Response<T>): Boolean {
     return data.isSuccessful && data.code() == 200

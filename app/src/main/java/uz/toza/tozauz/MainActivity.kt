@@ -57,8 +57,6 @@ class MainActivity : AppCompatActivity() {
 
     //hide bottom nav
     private fun hideBottomNav() {
-        // binding.toolbar.setNavigationIcon(R.drawable.ic_back_icon)
-        // binding.bottomNav.visibility = View.GONE
         binding.navView.visibility = View.GONE
     }
 

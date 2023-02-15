@@ -20,7 +20,7 @@ class HistoryFragment : Fragment() {
 
     private var _binding: FragmentDashboardBinding? = null
     private val binding get() = _binding!!
-    private val dashboardViewModel: HistoryViewModel by viewModels()
+    private val historyViewModel: HistoryViewModel by viewModels()
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -35,6 +35,9 @@ class HistoryFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding.apply {
             dateConvert {
+            }
+            dateConvert {
+                historyViewModel.getHistory(it,it)
                 txtToDay.text = it
                 txtFromDay.text = it
             }
@@ -48,7 +51,7 @@ class HistoryFragment : Fragment() {
                 showDialog(2)
             }
             recyclerview.layoutManager = LinearLayoutManager(requireContext())
-            dashboardViewModel.getOrderHistory.observe(requireActivity()) {
+            historyViewModel.getOrderHistory.observe(requireActivity()) {
                 recyclerview.adapter = HistoryAdapter(it.list)
                 txtOne.text = it.type1.toString()
                 txtTwo.text = it.type2.toString()
@@ -67,7 +70,7 @@ class HistoryFragment : Fragment() {
                     txtToDay.text = it
                 }
                 loader.visibility = View.VISIBLE
-                dashboardViewModel.getHistory(txtFromDay.text.toString(), txtToDay.text.toString())
+                historyViewModel.getHistory(txtFromDay.text.toString(), txtToDay.text.toString())
 
             }
         }

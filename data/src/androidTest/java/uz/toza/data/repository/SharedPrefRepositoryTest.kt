@@ -19,7 +19,7 @@ class SharedPrefRepositoryTest {
 
     @Test
     fun saveUserID() {
-        val userId = 155L
+        val userId = "155L"
         sharedPrefRepository.saveUserId(userId)
         val actual = sharedPrefRepository.getLongId()
         Assert.assertEquals(userId, actual)

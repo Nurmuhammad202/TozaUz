@@ -1,9 +1,10 @@
-package uz.toza.data.remote
+package uz.remote
 
 import kotlinx.coroutines.runBlocking
 import org.junit.Assert
 import org.junit.Before
 import org.junit.Test
+import uz.toza.data.remote.ApiInterface
 import uz.toza.data.remote.model.balance.BodyBalance
 import uz.toza.data.remote.model.hisotry.BodyHistory
 import uz.toza.data.remote.model.qrCode.BodyQrCode
@@ -20,7 +21,7 @@ class RetrofitTest {
 
     @Test
     fun getBalance() = runBlocking{
-        val bodyBalance = BodyBalance(userId = 1)
+        val bodyBalance = BodyBalance(userId = "1")
         val expected = apiInterface.getBalance(bodyBalance).body()?.balance
         val actual = "10000"
         Assert.assertEquals(expected, actual)
@@ -28,7 +29,7 @@ class RetrofitTest {
 
     @Test
     fun postQrCode() = runBlocking{
-        val postQrCode = BodyQrCode(code = "123", userId = 1)
+        val postQrCode = BodyQrCode(code = "123", userId = "1")
         val expected = apiInterface.getQrCode(postQrCode).body()?.status
         val actual = "S"
         Assert.assertEquals(expected, actual)
@@ -36,7 +37,7 @@ class RetrofitTest {
 
     @Test
     fun history()= runBlocking {
-        val postQrCode = BodyHistory("01.01.2023","02.01.2023",1)
+        val postQrCode = BodyHistory("01.01.2023","02.01.2023","1")
         val expected = apiInterface.history(postQrCode).body()?.status
         val actual = "S"
         Assert.assertEquals(expected, actual)
@@ -44,7 +45,7 @@ class RetrofitTest {
 
     @Test
     fun qrToday() = runBlocking {
-        val bodyBalance = BodyBalance(userId = 1)
+        val bodyBalance = BodyBalance(userId = "1")
         val expected = apiInterface.qrToday(bodyBalance).body()?.status
         val actual = "S"
         Assert.assertEquals(expected, actual)
@@ -52,7 +53,7 @@ class RetrofitTest {
 
     @Test
     fun profile() = runBlocking{
-        val profileBody=BodyBalance(userId = 1)
+        val profileBody=BodyBalance(userId = "1")
         val expected=apiInterface.profile(profileBody).body()?.status
         val actual="S"
         Assert.assertEquals(expected,actual)

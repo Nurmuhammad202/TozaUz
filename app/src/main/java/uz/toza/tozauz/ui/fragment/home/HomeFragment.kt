@@ -35,6 +35,9 @@ class HomeFragment : Fragment() {
 
         binding.apply {
 
+            homeViewModel.getBalance()
+            homeViewModel.todayDate()
+
             homeViewModel.balance.observe(requireActivity()) {
                 txtPrice.text = it
             }

@@ -1,6 +1,7 @@
-package uz.toza.data.remote
+package uz.remote
 
 import retrofit2.Response
+import uz.toza.data.remote.ApiInterface
 import uz.toza.data.remote.model.balance.BodyBalance
 import uz.toza.data.remote.model.balance.GetBalance
 import uz.toza.data.remote.model.hisotry.BodyHistory

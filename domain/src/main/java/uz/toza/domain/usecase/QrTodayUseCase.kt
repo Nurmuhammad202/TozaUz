@@ -15,6 +15,7 @@ class QrTodayUseCase(private val remoteRepository: RemoteRepository, private val
             val price = it.split("\"summa\":")[1]
             qrCodeConvert.add(QrCodeConvert(balance = balance, summa = "$price so'm"))
         }
+        println("sdsdfdsfd-> $qrCodeConvert")
         return qrCodeConvert
     }
 }

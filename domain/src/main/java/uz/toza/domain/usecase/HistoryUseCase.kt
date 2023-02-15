@@ -13,7 +13,7 @@ class HistoryUseCase(
 ) {
     suspend fun execute(startTime: String, endTime: String): HistoryList {
         val bodyHistoryModel =
-            BodyHistoryModel(endTime, startTime, localRepository.getLongId().toInt())
+            BodyHistoryModel(endTime, startTime, localRepository.getLongId())
         val response = remoteRepository.getHistory(bodyHistoryModel)
         val qrInfo = ArrayList<QrInfo>()
         var countType1 = 0

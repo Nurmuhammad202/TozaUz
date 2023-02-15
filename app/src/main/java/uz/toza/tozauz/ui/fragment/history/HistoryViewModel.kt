@@ -1,6 +1,8 @@
 package uz.toza.tozauz.ui.fragment.history
 
+import android.content.ContentValues.TAG
 import android.os.Build
+import android.util.Log
 import androidx.annotation.RequiresApi
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -20,16 +22,12 @@ import javax.inject.Inject
 class HistoryViewModel @Inject constructor(private val historyUseCase: HistoryUseCase) :
     ViewModel() {
 
-    init {
-        dateConvert {
-            getHistory(it,it)
-        }
-    }
-
     private var _getOrderHistory = MutableLiveData<HistoryList>()
     val getOrderHistory: LiveData<HistoryList> = _getOrderHistory
     fun getHistory(startTime: String, endTime: String) = viewModelScope.launch {
         try {
+            val item=historyUseCase.execute(startTime, endTime)
+            Log.d(TAG, "getHistory:-->$item ")
             _getOrderHistory.value = historyUseCase.execute(startTime, endTime)
         } catch (ex: Exception) {
             ex.printStackTrace()

@@ -1,4 +1,4 @@
-package uz.toza.tozauz.ui.fragment.notifications
+package uz.toza.tozauz.ui.fragment.balance
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

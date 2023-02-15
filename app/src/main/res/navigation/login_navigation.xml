@@ -3,14 +3,23 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/login_navigation"
-    app:startDestination="@id/loginSelectFragment">
+    app:startDestination="@id/fragment_launcher">
 
+
+    <fragment
+        android:id="@+id/fragment_launcher"
+        android:name="uz.toza.tozauz.ui.fragment.login.FragmentLauncher"
+        tools:layout="@layout/fragment_launcher" >
+        <action
+            android:id="@+id/action_fragment_launcher_to_loginSelectFragment"
+            app:destination="@id/loginSelectFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/loginFragment"
         android:name="uz.toza.tozauz.ui.fragment.login.LoginFragment"
         android:label="fragment_login"
-        tools:layout="@layout/fragment_login" >
+        tools:layout="@layout/fragment_login">
         <action
             android:id="@+id/action_loginFragment_to_otpSmsFragment"
             app:destination="@id/otpSmsFragment" />
@@ -19,7 +28,7 @@
         android:id="@+id/loginSelectFragment"
         android:name="uz.toza.tozauz.ui.fragment.login.LoginSelectFragment"
         android:label="fragment_login_select"
-        tools:layout="@layout/fragment_login_select" >
+        tools:layout="@layout/fragment_login_select">
         <action
             android:id="@+id/action_loginSelectFragment_to_loginFragment"
             app:destination="@id/loginFragment" />

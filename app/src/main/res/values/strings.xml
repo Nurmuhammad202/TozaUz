@@ -1,11 +1,9 @@
 <resources>
     <string name="app_name">TozaUz</string>
-    <string name="title_home">Главная</string>
     <string name="title_dashboard">История</string>
     <string name="title_notifications">Перевод денги</string>
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 
-    <string name="login_failed">"Login failed"</string>
+    <string name="login_failed">"Ошибка входа"</string>
     <string name="language_change">Выберите язык</string>
     <string name="txt_language_ozbek">Uzbek</string>
     <string name="txt_language_rus">Русский</string>
@@ -22,15 +20,10 @@
     <string name="sendSMStoNum">На ваш номер +998 90 568 1015\n отправлен SMS с кодо</string>
     <string name="sendAgain"><u>Отправит занова</u></string>
     <string name="continue_">Продолжить</string>
-    <string name="title_activity_login">LoginActivity</string>
     <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
 
-    <string name="hello_first_fragment">Hello first fragment</string>
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="home_interare_fragment_list_details">Клиенты</string>
     <string name="fragment_balance_history_toolbar">История пополнения</string>
     <string name="fragment_post_details_date">C</string>
@@ -40,7 +33,7 @@
     <string name="date">Дата</string>
     <string name="_2023_01_25_19_11_11">2023-01-25 19:11:11</string>
     <string name="_200_so_m">200 so\'m</string>
-    <string name="go_image">сканирование qrcode</string>
+    <string name="go_qr_code">сканирование qrcode</string>
     <string name="balance_avtive">ОCНОВНАЯ</string>
     <string name="fragment_balance">Баланс</string>
     <string name="fragment_add_card_toolbar">Привязать карту</string>
@@ -54,4 +47,20 @@
     <string name="count">Количество</string>
     <string name="type">Тип мишка</string>
     <string name="title_balance">Б:</string>
+    <string name="fragment_profile_language">Язык</string>
+    <string name="profile">Профиль</string>
+    <string name="add_card">Добавить карта</string>
+    <string name="main_bottom">Главная</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="title1">Для бытовых отходов</string>
+    <string name="title2">Для строительных отходов</string>
+    <string name="example_price">5 000</string>
+    <string name="_8600_03_9696">8600 03** **** 9696</string>
+    <string name="_450_000_25">450 000.25 сум</string>
+    <string name="sqb">Карта SQB</string>
+    <string name="_12_12">12/12</string>
+    <string name="card_hint">xxxx xxxx xxxx xxxx</string>
+    <string name="info_card">Карта №4</string>
+    <string name="face_number">+998993018716</string>
+    <string name="administrator">Администратор</string>
 </resources>

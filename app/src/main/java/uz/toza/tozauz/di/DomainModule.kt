@@ -67,4 +67,24 @@ class DomainModule {
             localRepository = localRepository
         )
     }
+
+    @Provides
+    fun provideGetLangUseCase(localRepository: LocalRepository): GetLangUseCase {
+        return GetLangUseCase(localRepository = localRepository)
+    }
+
+    @Provides
+    fun provideSetLangUseCase(localRepository: LocalRepository): SetLangUseCase {
+        return SetLangUseCase(localRepository = localRepository)
+    }
+
+    @Provides
+    fun provideGetToken(localRepository: LocalRepository): GetTokenUseCase {
+        return GetTokenUseCase(localRepository = localRepository)
+    }
+
+    @Provides
+    fun provideSetToken(localRepository: LocalRepository): SetTokenUseCase {
+        return SetTokenUseCase(localRepository = localRepository)
+    }
 }

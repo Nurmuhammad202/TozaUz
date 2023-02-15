@@ -10,13 +10,13 @@ import uz.toza.domain.repository.RemoteRepository
 
 class RemoteRepositoryIml(private val apiInterface: ApiInterface) : RemoteRepository {
 
-    override suspend fun postQrCode(qrCode: String, userId: Long): Boolean {
+    override suspend fun postQrCode(qrCode: String, userId: String): Boolean {
         val bodyQrCode = BodyQrCode(code = qrCode, userId = userId)
         val response = apiInterface.getQrCode(bodyQrCode)
         return success(response)
     }
 
-    override suspend fun getBalance(userId: Long): BalanceUseCaseModel {
+    override suspend fun getBalance(userId: String): BalanceUseCaseModel {
         val bodyBalance = BodyBalance(userId = userId)
         val response = apiInterface.getBalance(bodyBalance)
         if (success(response)) {
@@ -48,7 +48,7 @@ class RemoteRepositoryIml(private val apiInterface: ApiInterface) : RemoteReposi
         return GetOrderHistory("", mutableListOf(), "0", "error")
     }
 
-    override suspend fun qrToday(userId: Long): QrCodeToday {
+    override suspend fun qrToday(userId: String): QrCodeToday {
         val response = apiInterface.qrToday(BodyBalance(userId = userId))
         if (success(response)) {
             response.body()?.let {
@@ -58,7 +58,7 @@ class RemoteRepositoryIml(private val apiInterface: ApiInterface) : RemoteReposi
         return QrCodeToday(mutableListOf(), "")
     }
 
-    override suspend fun myProfile(userId: Long): MyProfile {
+    override suspend fun myProfile(userId: String): MyProfile {
         val response = apiInterface.profile(BodyBalance(userId = userId))
         if (success(response)) {
             response.body()?.let {

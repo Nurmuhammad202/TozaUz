@@ -13,12 +13,12 @@ class SharedPrefRepository(context: Context) : LocalRepository {
     private val sharedPreferences =
         context.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE)
 
-    override fun saveUserId(long: Long) {
-        sharedPreferences.edit().putLong(SHARED_USER_ID, long).apply()
+    override fun saveUserId(long: String) {
+        sharedPreferences.edit().putString(SHARED_USER_ID, long).apply()
     }
 
-    override fun getLongId(): Long {
-        return sharedPreferences.getLong(SHARED_USER_ID, 1)
+    override fun getLongId(): String {
+        return sharedPreferences.getString(SHARED_USER_ID, "") ?: ""
     }
 
     override fun saveLang(lang: String) {

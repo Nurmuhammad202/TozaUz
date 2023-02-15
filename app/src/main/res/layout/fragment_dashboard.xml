@@ -69,22 +69,18 @@
                 <androidx.appcompat.widget.AppCompatTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="left"
-                    android:text="@string/fragment_post_details_date"
-                    tools:ignore="RtlHardcoded" />
+                    android:layout_gravity="start"
+                    android:text="@string/fragment_post_details_date" />
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/txt_from_day"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ellipsize="end"
-                    android:fontFamily="@font/inter_semibold"
-                    android:gravity="center|left"
+                    style="@style/TextBold16"
+                    android:gravity="center|start"
                     android:maxLines="1"
-                    android:text="@string/home_taxi_client_filter_clock_date"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/text_size_15sp"
-                    tools:ignore="RtlHardcoded" />
+                    android:text="@string/home_taxi_client_filter_clock_date" />
             </androidx.appcompat.widget.LinearLayoutCompat>
 
 
@@ -118,167 +114,112 @@
                 <androidx.appcompat.widget.AppCompatTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="left"
-                    android:text="@string/fragment_post_details_to_date"
-                    tools:ignore="RtlHardcoded" />
+                    android:layout_gravity="start"
+                    android:text="@string/fragment_post_details_to_date" />
 
                 <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txt_to_day"
+                    style="@style/TextBold16"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ellipsize="end"
-                    android:id="@+id/txt_to_day"
-                    android:fontFamily="@font/inter_semibold"
-                    android:gravity="center|left"
+                    android:gravity="center|start"
                     android:maxLines="1"
-                    android:text="@string/home_taxi_client_filter_clock_date"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/text_size_15sp"
-                    tools:ignore="RtlHardcoded" />
+                    android:text="@string/home_taxi_client_filter_clock_date" />
             </androidx.appcompat.widget.LinearLayoutCompat>
 
 
         </androidx.appcompat.widget.LinearLayoutCompat>
     </androidx.appcompat.widget.LinearLayoutCompat>
 
-    <com.google.android.material.card.MaterialCardView
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/layout_detail"
         android:layout_width="match_parent"
         android:layout_height="250dp"
-        android:layout_marginTop="@dimen/margin_padding_8dp"
-        android:id="@+id/layout_detail"
         android:layout_below="@+id/top_layout"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginHorizontal="@dimen/margin_padding_16dp"
-        app:cardCornerRadius="0dp">
+        android:layout_margin="@dimen/margin_padding_16dp"
+        android:background="@drawable/ic_item_contener_border_details"
+        android:orientation="horizontal">
 
         <androidx.appcompat.widget.LinearLayoutCompat
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:orientation="horizontal">
+            android:layout_weight="1.5"
+            android:background="@drawable/ic_item_home"
+            android:orientation="vertical">
 
-            <androidx.appcompat.widget.LinearLayoutCompat
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1.5"
-                android:background="@drawable/ic_item_home"
-                android:orientation="vertical">
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/TextBold18"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/type" />
 
-                <androidx.appcompat.widget.LinearLayoutCompat
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    android:gravity="center">
-
-                    <androidx.appcompat.widget.AppCompatTextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/inter_bold"
-                        android:text="@string/type"
-                        android:textColor="@color/black"
-                        android:textSize="@dimen/text_size_18sp" />
-                </androidx.appcompat.widget.LinearLayoutCompat>
-
-
-                <androidx.appcompat.widget.LinearLayoutCompat
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/ic_item_home"
-                    android:gravity="center">
-
-                    <androidx.appcompat.widget.AppCompatTextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/inter_regular"
-                        android:text="Для бытовых отходов"
-                        android:textColor="@color/black" />
-                </androidx.appcompat.widget.LinearLayoutCompat>
-
-                <androidx.appcompat.widget.LinearLayoutCompat
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    android:gravity="center">
-
-                    <androidx.appcompat.widget.AppCompatTextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/inter_regular"
-                        android:text="Для строительных отходов"
-                        android:textColor="@color/black" />
-                </androidx.appcompat.widget.LinearLayoutCompat>
-
-            </androidx.appcompat.widget.LinearLayoutCompat>
-
-            <androidx.appcompat.widget.LinearLayoutCompat
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/TextRegular14"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
                 android:layout_weight="1"
                 android:background="@drawable/ic_item_home"
-                android:orientation="vertical">
+                android:gravity="center"
+                android:text="@string/title1" />
 
-                <androidx.appcompat.widget.LinearLayoutCompat
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    android:gravity="center">
-
-                    <androidx.appcompat.widget.AppCompatTextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/inter_bold"
-                        android:text="@string/count"
-                        android:textColor="@color/black"
-                        android:textSize="@dimen/text_size_18sp" />
-                </androidx.appcompat.widget.LinearLayoutCompat>
-
-
-                <androidx.appcompat.widget.LinearLayoutCompat
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/ic_item_home"
-                    android:gravity="center">
-
-                    <androidx.appcompat.widget.AppCompatTextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/inter_regular"
-                        android:text="0"
-                        android:id="@+id/txt_one"
-                        android:textColor="@color/black" />
-                </androidx.appcompat.widget.LinearLayoutCompat>
-
-                <androidx.appcompat.widget.LinearLayoutCompat
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    android:gravity="center">
-
-                    <androidx.appcompat.widget.AppCompatTextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/inter_regular"
-                        android:text="0"
-                        android:id="@+id/txt_two"
-                        android:textColor="@color/black" />
-                </androidx.appcompat.widget.LinearLayoutCompat>
-            </androidx.appcompat.widget.LinearLayoutCompat>
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/inter_regular"
+                android:gravity="center"
+                android:text="@string/title2"
+                android:textColor="@color/black" />
         </androidx.appcompat.widget.LinearLayoutCompat>
 
-    </com.google.android.material.card.MaterialCardView>
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/ic_item_home"
+            android:orientation="vertical">
 
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/TextBold18"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/count" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txt_one"
+                style="@style/TextRegular14"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@drawable/ic_item_home"
+                android:gravity="center" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txt_two"
+                style="@style/TextRegular14"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/inter_regular"
+                android:gravity="center"
+                android:textColor="@color/black" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.appcompat.widget.LinearLayoutCompat>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerview"
-        android:layout_below="@+id/layout_detail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/layout_detail"
         android:layout_alignParentStart="true"
-        tools:listitem="@layout/item_hisotry_layput"
-        tools:itemCount="20"
-        android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
         android:layout_marginHorizontal="@dimen/margin_padding_16dp"
         android:layout_marginTop="15dp"
         android:overScrollMode="never" />
@@ -289,6 +230,7 @@
         android:layout_height="@dimen/loader"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
+        android:visibility="visible"
         app:lottie_autoPlay="true"
         app:lottie_loop="true"
         app:lottie_rawRes="@raw/loader" />

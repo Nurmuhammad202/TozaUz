@@ -19,21 +19,39 @@ class HomeViewModel @Inject constructor(
     private val postQrCodeUseCase: PostQrCodeUseCase
 ) : ViewModel() {
 
+    init {
+        todayDate()
+        getBalance()
+    }
+
     private var _qrCodeToday = MutableLiveData<ArrayList<QrCodeConvert>>()
     val qrCodeToday: LiveData<ArrayList<QrCodeConvert>> = _qrCodeToday
-    fun todayDate() = viewModelScope.launch {
-        _qrCodeToday.value = qrTodayUseCase.getQrToday()
+    private fun todayDate() = viewModelScope.launch {
+        try {
+            _qrCodeToday.value = qrTodayUseCase.getQrToday()
+        } catch (ex: Exception) {
+            ex.printStackTrace()
+        }
     }
 
     private var _balance = MutableLiveData<String>()
     val balance: LiveData<String> = _balance
-    fun getBalance() = viewModelScope.launch {
-        _balance.value = getBalanceUseCase.execute()
+    private fun getBalance() = viewModelScope.launch {
+        try {
+            _balance.value = getBalanceUseCase.execute()
+        } catch (ex: Exception) {
+            ex.printStackTrace()
+        }
     }
 
     private var _success = MutableLiveData<Boolean>()
     val success: LiveData<Boolean> = _success
     fun postQrCode(qrcode: String) = viewModelScope.launch {
-        _success.value = postQrCodeUseCase.executePostQrCode(qrcode)
+        try {
+            _success.value = postQrCodeUseCase.executePostQrCode(qrcode)
+        } catch (ex: Exception) {
+            ex.printStackTrace()
+        }
     }
 }
+

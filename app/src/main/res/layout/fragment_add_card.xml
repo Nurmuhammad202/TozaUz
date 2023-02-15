@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.fragment.notifications.AddCardFragment">
+    tools:context=".ui.fragment.balance.AddCardFragment">
 
     <RelativeLayout
         android:id="@+id/toolbar"
@@ -49,144 +49,84 @@
             android:paddingHorizontal="@dimen/margin_padding_16dp">
 
             <androidx.appcompat.widget.AppCompatTextView
+                style="@style/TextBold18"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_padding_16dp"
-                android:ellipsize="end"
-                android:fontFamily="@font/inter_bold"
-                android:maxLines="1"
-                android:text="@string/fragment_balance_add_card_add_card_title"
-                android:textColor="@color/black"
-                android:textSize="@dimen/text_size_18sp" />
+                android:text="@string/fragment_balance_add_card_add_card_title" />
 
             <androidx.appcompat.widget.AppCompatTextView
+                style="@style/TextMedium16"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_padding_18dp"
-                android:ellipsize="end"
-                android:fontFamily="@font/inter_medium"
-                android:maxLines="1"
-                android:text="@string/fragment_balance_sort_card"
-                android:textColor="@color/black"
-                android:textSize="@dimen/text_size_14sp" />
+                android:text="@string/fragment_balance_sort_card" />
 
-            <androidx.appcompat.widget.LinearLayoutCompat
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/txt_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_padding_8dp"
-                android:background="@drawable/ic_item_contener_border_edit_style"
-                android:orientation="horizontal"
+                android:layout_gravity="center"
+                android:drawablePadding="8dp"
+                android:paddingVertical="@dimen/margin_padding_16dp"
+                android:drawableStart="@drawable/cash_back"
+                android:background="@drawable/ic_item_continer_border_edit_style"
+                android:gravity="center|left"
+                android:hint="@string/info_card"
+                android:drawableTint="@color/black"
+                android:inputType="text"
                 android:paddingHorizontal="@dimen/margin_padding_8dp"
-                android:paddingVertical="@dimen/margin_padding_16dp">
-
-                <androidx.appcompat.widget.AppCompatImageView
-                    android:layout_width="24sp"
-                    android:layout_height="24sp"
-                    android:layout_gravity="center"
-                    android:src="@drawable/cash_back"
-                    app:tint="@color/black" />
-
-                <androidx.appcompat.widget.AppCompatEditText
-                    android:id="@+id/txt_orinted"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:background="@drawable/edit_default"
-                    android:gravity="center|left"
-                    android:hint="Карта №4"
-                    android:inputType="text"
-                    android:paddingHorizontal="@dimen/margin_padding_8dp"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/text_size_18sp"
-                    tools:ignore="HardcodedText,RtlHardcoded" />
-            </androidx.appcompat.widget.LinearLayoutCompat>
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_18sp"
+                tools:ignore="RtlHardcoded,UnusedAttribute" />
 
             <androidx.appcompat.widget.AppCompatTextView
+                style="@style/TextMedium16"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_padding_18dp"
-                android:ellipsize="end"
-                android:fontFamily="@font/inter_medium"
-                android:maxLines="1"
-                android:text="@string/fragment_balance_add_card_number_card"
-                android:textColor="@color/black"
-                android:textSize="@dimen/text_size_14sp" />
+                android:text="@string/fragment_balance_add_card_number_card" />
 
-            <androidx.appcompat.widget.LinearLayoutCompat
+            <com.santalu.maskara.widget.MaskEditText
+                android:id="@+id/txt_card_number"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_padding_8dp"
-                android:background="@drawable/ic_item_contener_border_edit_style"
-                android:orientation="horizontal"
+                android:paddingVertical="@dimen/margin_padding_16dp"
+                android:drawablePadding="@dimen/margin_padding_8dp"
+                android:background="@drawable/ic_item_continer_border_edit_style"
+                android:drawableTint="@color/black"
+                android:drawableStart="@drawable/cash_back"
+                android:layout_gravity="center"
+                android:gravity="center|start"
+                android:hint="@string/card_hint"
+                android:inputType="number"
                 android:paddingHorizontal="@dimen/margin_padding_8dp"
-                android:paddingVertical="@dimen/margin_padding_16dp">
-
-                <androidx.appcompat.widget.AppCompatImageView
-                    android:layout_width="24sp"
-                    android:layout_height="24sp"
-                    android:layout_gravity="center"
-                    android:src="@drawable/cash_back"
-                    app:tint="@color/black" />
-
-                <com.santalu.maskara.widget.MaskEditText
-                    android:id="@+id/txt_card_number"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:background="@drawable/edit_default"
-                    android:gravity="center|left"
-                    android:hint="xxxx xxxx xxxx xxxx "
-                    android:inputType="number"
-                    android:paddingHorizontal="@dimen/margin_padding_8dp"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/text_size_18sp"
-                    app:mask="____ ____ ____ ____"
-                    tools:ignore="HardcodedText,RtlHardcoded" />
-            </androidx.appcompat.widget.LinearLayoutCompat>
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_18sp"
+                app:mask="____ ____ ____ ____"
+                tools:ignore="UnusedAttribute" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_padding_16dp"
-                android:ellipsize="end"
-                android:fontFamily="@font/inter_medium"
-                android:maxLines="1"
-                android:text="@string/fragment_balance_add_card_srok_date"
-                android:textColor="@color/black"
-                android:textSize="@dimen/text_size_14sp" />
+                style="@style/TextMedium16"
+                android:text="@string/fragment_balance_add_card_srok_date" />
 
-            <LinearLayout
+            <com.santalu.maskara.widget.MaskEditText
+                android:id="@+id/txt_validate"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_padding_8dp"
-                android:background="@drawable/ic_item_contener_border_edit_style"
-                android:orientation="horizontal"
                 android:paddingHorizontal="@dimen/margin_padding_8dp"
-                android:paddingVertical="@dimen/margin_padding_16dp">
-
-                <ImageView
-                    android:layout_width="@dimen/margin_padding_20dp"
-                    android:layout_height="@dimen/margin_padding_20dp"
-                    android:src="@drawable/ic_date_icon"
-                    app:tint="@color/black"
-                    tools:ignore="ContentDescription" />
-
-                <com.santalu.maskara.widget.MaskEditText
-                    android:id="@+id/txt_validate"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="2"
-                    android:background="@drawable/edit_default"
-                    android:gravity="center|left"
-                    android:hint="12/12"
-                    android:inputType="number"
-                    android:paddingHorizontal="@dimen/margin_padding_8dp"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/text_size_16sp"
-                    app:mask="__/__"
-                    tools:ignore="HardcodedText,RtlHardcoded" />
-            </LinearLayout>
-
+                android:paddingVertical="@dimen/margin_padding_16dp"
+                android:drawablePadding="@dimen/margin_padding_8dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ic_item_continer_border_edit_style"
+                android:drawableStart="@drawable/ic_date_icon"
+                android:gravity="center|start"
+                android:hint="@string/_12_12"
+                android:inputType="number"
+                style="@style/TextRegular14"
+                app:mask="__/__" />
         </androidx.appcompat.widget.LinearLayoutCompat>
 
     </androidx.core.widget.NestedScrollView>
@@ -198,22 +138,20 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginHorizontal="@dimen/margin_padding_16dp"
         android:layout_marginBottom="@dimen/margin_padding_8dp"
-        android:orientation="horizontal">
-
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingHorizontal="@dimen/margin_padding_8dp">
 
         <com.google.android.material.button.MaterialButton
             style="@style/Button60015"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_padding_16dp"
             android:layout_marginEnd="6dp"
             android:layout_weight="1"
             android:backgroundTint="#5C7080"
             android:padding="@dimen/margin_padding_16dp"
-            android:text="@string/back"
-            tools:ignore="UnusedAttribute" />
+            android:text="@string/back" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_save"
@@ -221,7 +159,6 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="6dp"
-            android:layout_marginTop="@dimen/margin_padding_16dp"
             android:layout_weight="1"
             android:alpha="0.5"
             android:enabled="true"

@@ -22,7 +22,6 @@
             android:layout_height="match_parent"
             android:layout_marginHorizontal="@dimen/margin_padding_24dp"
             android:layout_marginTop="@dimen/margin_padding_16dp"
-            android:layout_weight="2"
             android:gravity="end|center">
 
             <ImageView
@@ -34,41 +33,13 @@
                 tools:ignore="ContentDescription" />
         </LinearLayout>
 
-        <LinearLayout
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:paddingHorizontal="@dimen/margin_padding_16dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="36dp"
-                android:layout_marginTop="4dp"
-                android:gravity="center|left"
-                android:orientation="horizontal"
-                android:weightSum="10"
-                tools:ignore="RtlHardcoded,UselessParent">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center">
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_weight="7"
-                        android:gravity="center"
-                        android:text="@string/date"
-                        android:textColor="@color/black"
-                        android:textSize="19sp" />
-                </LinearLayout>
-
-
-            </LinearLayout>
-
-        </LinearLayout>
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="@string/date"
+            style="@style/TextBold18"/>
 
         <DatePicker
             android:id="@+id/datePicker"

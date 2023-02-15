@@ -2,8 +2,10 @@ package uz.toza.tozauz
 
 import android.animation.Animator
 import android.animation.AnimatorListenerAdapter
+import android.content.res.Configuration
 import android.os.Bundle
 import android.view.View
+import androidx.activity.viewModels
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
@@ -16,16 +18,19 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import dagger.hilt.android.AndroidEntryPoint
 import uz.toza.tozauz.databinding.ActivityMainBinding
+import java.util.*
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
     lateinit var navController: NavController
+    private val mainViewModel: MainViewModel by viewModels()
     private lateinit var appBarConfiguration: AppBarConfiguration
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
+        languageUpdate(mainViewModel.getLang())
         setContentView(binding.root)
 
         val navHostFragment =
@@ -34,7 +39,10 @@ class MainActivity : AppCompatActivity() {
 
         appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_notifications
+                R.id.navigation_home,
+                R.id.navigation_dashboard,
+                R.id.navigation_notifications,
+                R.id.navigation_profile
             )
         )
 
@@ -43,6 +51,7 @@ class MainActivity : AppCompatActivity() {
                 R.id.navigation_home -> showBottomNav()
                 R.id.navigation_dashboard -> showBottomNav()
                 R.id.navigation_notifications -> showBottomNav()
+                R.id.navigation_profile -> showBottomNav()
                 else -> hideBottomNav()
             }
         }
@@ -62,5 +71,14 @@ class MainActivity : AppCompatActivity() {
 
     override fun onSupportNavigateUp(): Boolean {
         return navController.navigateUp() || super.onSupportNavigateUp()
+    }
+
+    //update language...
+    private fun languageUpdate(language: String) {
+        val locale = Locale(language)
+        Locale.setDefault(locale)
+        val config = Configuration()
+        config.locale = locale
+        resources.updateConfiguration(config, resources.displayMetrics)
     }
 }

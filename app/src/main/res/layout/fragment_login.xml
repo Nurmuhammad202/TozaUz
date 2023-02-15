@@ -77,7 +77,7 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/margin_padding_16dp"
             android:layout_marginTop="@dimen/margin_padding_8dp"
-            android:background="@drawable/ic_item_contener_border_edit_style"
+            android:background="@drawable/ic_item_continer_border_edit_style"
             android:drawableEnd="@drawable/ic_phone"
             android:drawableTintMode="@color/black"
             android:fontFamily="@font/inter_regular"

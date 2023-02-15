@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -11,26 +10,20 @@
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
         android:layout_height="@dimen/margin_padding_60dp"
-        android:gravity="center|right"
         android:background="@color/white"
-        tools:ignore="RtlHardcoded">
+        android:gravity="center|end">
 
         <androidx.appcompat.widget.AppCompatTextView
+            style="@style/TextBold16"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/title_balance"
-            android:textSize="@dimen/text_size_16sp"
-            android:textColor="@color/black"
-            android:fontFamily="@font/inter_bold"/>
+            android:text="@string/title_balance" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/txt_price"
+            style="@style/TextMedium16"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/inter_medium"
-            android:paddingEnd="@dimen/margin_padding_16dp"
-            android:textColor="@color/black"
-            tools:ignore="RtlHardcoded,RtlSymmetry" />
+            android:layout_height="wrap_content" />
     </androidx.appcompat.widget.LinearLayoutCompat>
 
     <androidx.appcompat.widget.LinearLayoutCompat
@@ -39,140 +32,89 @@
         android:gravity="center"
         android:orientation="vertical">
 
-        <com.google.android.material.card.MaterialCardView
+        <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
             android:layout_height="250dp"
             android:layout_marginHorizontal="@dimen/margin_padding_16dp"
-            app:cardCornerRadius="0dp">
+            android:background="@color/white"
+            android:orientation="horizontal">
 
             <androidx.appcompat.widget.LinearLayoutCompat
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:orientation="horizontal">
+                android:layout_weight="1.5"
+                android:background="@drawable/ic_item_home"
+                android:orientation="vertical">
 
-                <androidx.appcompat.widget.LinearLayoutCompat
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1.5"
-                    android:background="@drawable/ic_item_home"
-                    android:orientation="vertical">
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/TextBold18"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="@string/type" />
 
-                    <androidx.appcompat.widget.LinearLayoutCompat
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_weight="1"
-                        android:gravity="center">
-
-                        <androidx.appcompat.widget.AppCompatTextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/inter_bold"
-                            android:text="@string/type"
-                            android:textColor="@color/black"
-                            android:textSize="@dimen/text_size_18sp" />
-                    </androidx.appcompat.widget.LinearLayoutCompat>
-
-
-                    <androidx.appcompat.widget.LinearLayoutCompat
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_weight="1"
-                        android:background="@drawable/ic_item_home"
-                        android:gravity="center">
-
-                        <androidx.appcompat.widget.AppCompatTextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/inter_regular"
-                            android:text="Для бытовых отходов"
-                            android:textColor="@color/black" />
-                    </androidx.appcompat.widget.LinearLayoutCompat>
-
-                    <androidx.appcompat.widget.LinearLayoutCompat
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_weight="1"
-                        android:gravity="center">
-
-                        <androidx.appcompat.widget.AppCompatTextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/inter_regular"
-                            android:text="Для строительных отходов"
-                            android:textColor="@color/black" />
-                    </androidx.appcompat.widget.LinearLayoutCompat>
-
-                </androidx.appcompat.widget.LinearLayoutCompat>
-
-                <androidx.appcompat.widget.LinearLayoutCompat
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/TextRegular14"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
                     android:layout_weight="1"
                     android:background="@drawable/ic_item_home"
-                    android:orientation="vertical">
+                    android:gravity="center"
+                    android:text="@string/title1" />
 
-                    <androidx.appcompat.widget.LinearLayoutCompat
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_weight="1"
-                        android:gravity="center">
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/TextRegular14"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="@string/title2" />
 
-                        <androidx.appcompat.widget.AppCompatTextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/inter_bold"
-                            android:text="@string/count"
-                            android:textColor="@color/black"
-                            android:textSize="@dimen/text_size_18sp" />
-                    </androidx.appcompat.widget.LinearLayoutCompat>
-
-
-                    <androidx.appcompat.widget.LinearLayoutCompat
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_weight="1"
-                        android:background="@drawable/ic_item_home"
-                        android:gravity="center">
-
-                        <androidx.appcompat.widget.AppCompatTextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/inter_regular"
-                            android:text="0"
-                            android:id="@+id/txt_one"
-                            android:textColor="@color/black" />
-                    </androidx.appcompat.widget.LinearLayoutCompat>
-
-                    <androidx.appcompat.widget.LinearLayoutCompat
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_weight="1"
-                        android:gravity="center">
-
-                        <androidx.appcompat.widget.AppCompatTextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/inter_regular"
-                            android:text="0"
-                            android:id="@+id/txt_two"
-                            android:textColor="@color/black" />
-                    </androidx.appcompat.widget.LinearLayoutCompat>
-                </androidx.appcompat.widget.LinearLayoutCompat>
             </androidx.appcompat.widget.LinearLayoutCompat>
 
-        </com.google.android.material.card.MaterialCardView>
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/ic_item_home"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/TextBold18"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="@string/count" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txt_one"
+                    style="@style/TextRegular14"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/ic_item_home"
+                    android:gravity="center" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txt_two"
+                    style="@style/TextRegular14"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </androidx.appcompat.widget.LinearLayoutCompat>
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_go"
+            android:id="@+id/btn_qr_code"
             style="@style/btnGreen"
             android:layout_width="match_parent"
             android:layout_height="@dimen/btn_size"
-            android:layout_gravity="bottom"
-            android:layout_marginHorizontal="@dimen/margin_padding_16dp"
-            android:layout_marginTop="@dimen/margin_padding_16dp"
-            android:layout_marginBottom="@dimen/margin_padding_36dp"
-            android:text="@string/go_image"
-            tools:ignore="UnusedAttribute" />
+            android:layout_margin="@dimen/margin_padding_16dp"
+            android:text="@string/go_qr_code" />
+
     </androidx.appcompat.widget.LinearLayoutCompat>
 
 </androidx.appcompat.widget.LinearLayoutCompat>

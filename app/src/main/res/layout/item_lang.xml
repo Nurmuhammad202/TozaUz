@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:padding="@dimen/margin_padding_8dp">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/btn_uzb"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/margin_padding_56dp"
+        android:drawableStart="@drawable/ic_uzb_flag"
+        android:drawablePadding="@dimen/margin_padding_8dp"
+        android:gravity="center|start"
+        style="@style/TextMedium16"
+        android:text="@string/txt_language_ozbek" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/btn_ru"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/margin_padding_56dp"
+        android:drawableStart="@drawable/ic_ru_flag"
+        android:drawablePadding="@dimen/margin_padding_8dp"
+        style="@style/TextMedium16"
+        android:gravity="center|start"
+        android:text="@string/txt_language_rus" />
+</androidx.appcompat.widget.LinearLayoutCompat>

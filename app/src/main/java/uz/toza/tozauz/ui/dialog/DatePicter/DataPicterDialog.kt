@@ -10,29 +10,21 @@ import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AlertDialog
 import uz.toza.tozauz.R
 import uz.toza.tozauz.databinding.ItemPrrofileDataDialogLayoutBinding
+import uz.toza.tozauz.ui.dialog.BaseAlertDialog
 import java.util.*
 
 @RequiresApi(Build.VERSION_CODES.O)
 class DataPicterDialog(context: Context, var type:String,var success: (String) -> Unit) :
-    AlertDialog(context) {
+    BaseAlertDialog(context) {
     private val binding = ItemPrrofileDataDialogLayoutBinding.inflate(LayoutInflater.from(context))
 
     init {
-        window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
-        window!!.attributes.windowAnimations = R.style.DialogAnimationZoom
-        window!!.attributes.gravity = Gravity.CENTER
         setCancelable(false)
-
         //min date...
         val calendar = Calendar.getInstance()
         calendar.set(Calendar.YEAR, calendar.get(Calendar.YEAR))
         calendar.set(Calendar.MONTH, calendar.get(Calendar.MONTH))
         binding.datePicker.maxDate = calendar.timeInMillis
-
-        //maxDate...
-//       calendar.set(Calendar.YEAR,calendar.get(Calendar.YEAR))
-//       binding.datePicker.maxDate=calendar.timeInMillis
-
 
         binding.apply {
             btClose.setOnClickListener {

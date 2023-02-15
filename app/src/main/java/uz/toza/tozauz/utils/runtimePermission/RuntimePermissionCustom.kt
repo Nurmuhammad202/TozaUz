@@ -1,4 +1,4 @@
-package uz.toza.tozauz.utils
+package uz.toza.tozauz.utils.runtimePermission
 
 import android.Manifest
 import android.content.Context

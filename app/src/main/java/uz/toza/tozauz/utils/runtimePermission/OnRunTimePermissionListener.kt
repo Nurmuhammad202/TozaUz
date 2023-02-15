@@ -1,4 +1,4 @@
-package uz.toza.tozauz.utils
+package uz.toza.tozauz.utils.runtimePermission
 
 interface OnRunTimePermissionListener{
     //onPermission Granted...

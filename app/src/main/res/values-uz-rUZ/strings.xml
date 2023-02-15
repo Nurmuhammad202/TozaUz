@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TozaUz</string>
+    <string name="title_dashboard">Tarix</string>
+    <string name="title_notifications">Pul o\'tkazmasi</string>
+    <string name="login_failed">"tizimga kirishda xatolik yuz berdi"</string>
+    <string name="language_change">Tilni tanlang</string>
+    <string name="txt_language_ozbek">Uzbek</string>
+    <string name="txt_language_rus">Русский</string>
+    <string name="registerSimple">Kirish</string>
+    <string name="auth_phone_title">Tizimga kirish</string>
+    <string name="phone_auth_text">Telefon raqami orqali</string>
+    <string name="text_phone">Telefon raqami</string>
+    <string name="fragment_login_phone_sms">Sizning raqamimizga tasdiqlash kodi bilan SMS keladi</string>
+    <string name="signIn">Kirish uchun</string>
+    <string name="numberDoesntExist">Tizimda bunday raqam yo\'q</string>
+    <string name="enterSomething">Biror narsani ko\'ring</string>
+    <string name="smsBack">Kirish</string>
+    <string name="enterCode">Kirish paroli</string>
+    <string name="sendSMStoNum">+998 90 568 1015 raqamingizga kodli SMS yuborildi</string>
+    <string name="sendAgain"><u>Yana yuboring</u></string>
+    <string name="continue_">Davom eting</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="home_interare_fragment_list_details">Mijozlar</string>
+    <string name="fragment_balance_history_toolbar">To\'ldirish tarixi</string>
+    <string name="fragment_post_details_date">Dan</string>
+    <string name="fragment_post_details_to_date">Gacha</string>
+    <string name="home_taxi_client_filter_clock_date">01 авг 2021</string>
+    <string name="save">Saqlash</string>
+    <string name="date">Sana</string>
+    <string name="_2023_01_25_19_11_11">2023-01-25 19:11:11</string>
+    <string name="_200_so_m">200 so\'m</string>
+    <string name="go_qr_code">Qrkodni skanerlash</string>
+    <string name="balance_avtive">ASOSIY</string>
+    <string name="fragment_balance">Balans</string>
+    <string name="fragment_add_card_toolbar">Bog\'lanish kartasi</string>
+    <string name="fragment_balance_add_card_add_card_title">Karta ma\'lumotlarini kiriting</string>
+    <string name="fragment_balance_sort_card">Xarita nomi</string>
+    <string name="fragment_balance_add_card_number_card">Karta raqami</string>
+    <string name="fragment_balance_add_card_srok_date">Amal qilish muddati</string>
+    <string name="fragment_balance_add_sms_code">Bunday karta yo\'q</string>
+    <string name="back">Orqaga</string>
+    <string name="error">kirish yo\'q !!</string>
+    <string name="count">Miqdori</string>
+    <string name="type">Tur</string>
+    <string name="title_balance">B:</string>
+    <string name="fragment_profile_language">Til</string>
+    <string name="profile">Profil</string>
+    <string name="add_card">Karitani qo\'shish</string>
+    <string name="main_bottom">Asosiy</string>
+    <string name="title1">Texnika chiqindilari</string>
+    <string name="title2">Qurulish chiqindilari</string>
+    <string name="_8600_03_9696">8600 03** **** 9696</string>
+    <string name="_450_000_25">450 000.25 сум</string>
+    <string name="example_price">5 000</string>
+    <string name="sqb">Karta SQB</string>
+    <string name="_12_12">12/12</string>
+    <string name="card_hint">xxxx xxxx xxxx xxxx</string>
+    <string name="info_card">Karta №4</string>
+    <string name="face_number">+998993018716</string>
+    <string name="administrator">Administrator</string>
+</resources>

@@ -2,9 +2,9 @@ package uz.toza.domain.repository
 
 interface LocalRepository {
 
-    fun saveUserId(long: Long)
+    fun saveUserId(long: String)
 
-    fun getLongId(): Long
+    fun getLongId(): String
 
     fun saveLang(lang: String)
 

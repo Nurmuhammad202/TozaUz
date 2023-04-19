@@ -2,7 +2,10 @@ package uz.toza.data.remote
 
 import retrofit2.Response
 import retrofit2.http.Body
+import retrofit2.http.Headers
 import retrofit2.http.POST
+import uz.toza.data.remote.model.auth.BodyAuthToken
+import uz.toza.data.remote.model.auth.AuthTokenResponse
 import uz.toza.data.remote.model.balance.BodyBalance
 import uz.toza.data.remote.model.balance.GetBalance
 import uz.toza.data.remote.model.hisotry.BodyHistory
@@ -39,4 +42,9 @@ interface ApiInterface {
     suspend fun profile(
         @Body bodyBalance: BodyBalance
     ):Response<MyProfile>
+
+    @POST("/v1/account/api-token-auth/")
+    suspend fun getToken(
+        @Body bodyAuthToken: BodyAuthToken
+    ):Response<AuthTokenResponse>
 }

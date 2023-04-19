@@ -2,6 +2,7 @@ package uz.toza.data.repository
 
 import uz.toza.data.extension.success
 import uz.toza.data.remote.ApiInterface
+import uz.toza.data.remote.model.auth.BodyAuthToken
 import uz.toza.data.remote.model.balance.BodyBalance
 import uz.toza.data.remote.model.hisotry.BodyHistory
 import uz.toza.data.remote.model.qrCode.BodyQrCode
@@ -66,6 +67,16 @@ class RemoteRepositoryIml(private val apiInterface: ApiInterface) : RemoteReposi
             }
         }
         return MyProfile("", "", "", "", mutableListOf(), "")
+    }
+
+    override suspend fun getToken(phoneNumber: String, password: String): AuthTokenModel {
+        val response = apiInterface.getToken(BodyAuthToken("phoneNumber", "kdlask"))
+        if (success(response)){
+            response.body()?.let {
+                return AuthTokenModel(it.token, it.id, it.phone_number, it.first_name, it.role)
+            }
+        }
+        return AuthTokenModel()
     }
 }
 

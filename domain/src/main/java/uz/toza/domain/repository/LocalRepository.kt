@@ -9,4 +9,8 @@ interface LocalRepository {
     fun saveLang(lang: String)
 
     fun getLang(): String
+
+    fun saveToken(token:String)
+
+    fun getToken():String
 }

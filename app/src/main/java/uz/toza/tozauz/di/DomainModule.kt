@@ -87,4 +87,14 @@ class DomainModule {
     fun provideSetToken(localRepository: LocalRepository): SetTokenUseCase {
         return SetTokenUseCase(localRepository = localRepository)
     }
+
+    @Provides
+    fun provideSetAuthToken(localRepository: LocalRepository, remoteRepository: RemoteRepository):SetAuthTokenUseCase{
+        return SetAuthTokenUseCase(localRepository, remoteRepository)
+    }
+
+    @Provides
+    fun provideGetAuthToken(localRepository: LocalRepository):GetAuthTokenUseCase{
+        return GetAuthTokenUseCase(localRepository)
+    }
 }

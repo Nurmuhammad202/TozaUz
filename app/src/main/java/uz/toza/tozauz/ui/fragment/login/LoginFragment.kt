@@ -30,12 +30,19 @@ class LoginFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         binding.apply {
+            loginViewModel.isLoading.observe(viewLifecycleOwner){
+                if (it){
+                    loader.visibility = View.VISIBLE
+                }else{
+                    loader.visibility = View.INVISIBLE
+                    requireActivity().finishAffinity()
+                    startActivity(Intent(requireContext(), MainActivity::class.java))
+                }
+            }
             btnSignIn.setOnClickListener {
                 loginViewModel.setToken("Nurmuhammad")
-                requireActivity().finishAffinity()
-                startActivity(Intent(requireContext(), MainActivity::class.java))
+                loginViewModel.setAuthToken(txtPhone.text.toString(), txtPassword.text.toString())
             // findNavController().navigate(R.id.action_loginFragment_to_otpSmsFragment)
             }
             backToHome.setOnClickListener {

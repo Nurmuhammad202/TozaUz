@@ -12,4 +12,6 @@ interface RemoteRepository {
     suspend fun qrToday(userId: String): QrCodeToday
 
     suspend fun myProfile(userId: String):MyProfile
+
+    suspend fun getToken(phoneNumber:String, password:String):AuthTokenModel
 }

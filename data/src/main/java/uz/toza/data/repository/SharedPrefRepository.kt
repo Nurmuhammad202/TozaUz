@@ -7,6 +7,7 @@ const val SHARED_PREF_NAME = "sharedPrefName"
 const val SHARED_USER_ID = "sharedUserId"
 const val SHARED_LANG = "language"
 const val DEFAULT_LANG = "ru"
+const val TOKEN = "token"
 
 class SharedPrefRepository(context: Context) : LocalRepository {
 
@@ -27,5 +28,13 @@ class SharedPrefRepository(context: Context) : LocalRepository {
 
     override fun getLang(): String {
         return sharedPreferences.getString(SHARED_LANG, DEFAULT_LANG) ?: DEFAULT_LANG
+    }
+
+    override fun saveToken(token: String) {
+        sharedPreferences.edit().putString(TOKEN, token).apply()
+    }
+
+    override fun getToken(): String {
+        return sharedPreferences.getString(TOKEN, "") ?: ""
     }
 }

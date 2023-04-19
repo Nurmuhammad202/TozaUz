@@ -69,6 +69,5 @@ class LoginSelectFragment : Fragment() {
         val config = Configuration()
         config.locale = locale
         resources.updateConfiguration(config, resources.displayMetrics)
-
     }
 }

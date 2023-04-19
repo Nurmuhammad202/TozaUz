@@ -12,6 +12,5 @@ open class BaseAlertDialog(context: Context) : AlertDialog(context) {
         window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
         window!!.attributes.windowAnimations = R.style.DialogAnimationZoom
         window!!.attributes.gravity = Gravity.CENTER
-
     }
 }

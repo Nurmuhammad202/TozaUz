@@ -14,7 +14,7 @@
     <string name="fragment_login_phone_sms">Sizning raqamimizga tasdiqlash kodi bilan SMS keladi</string>
     <string name="signIn">Kirish uchun</string>
     <string name="numberDoesntExist">Tizimda bunday raqam yo\'q</string>
-    <string name="enterSomething">Biror narsani ko\'ring</string>
+    <string name="enterSomething">Parol</string>
     <string name="smsBack">Kirish</string>
     <string name="enterCode">Kirish paroli</string>
     <string name="sendSMStoNum">+998 90 568 1015 raqamingizga kodli SMS yuborildi</string>

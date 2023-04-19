@@ -92,17 +92,21 @@
             app:mask="+___ (__) ___ __ __"
             tools:ignore="UnusedAttribute" />
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/txt_first"
+        <androidx.appcompat.widget.AppCompatEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/margin_padding_12dp"
-            android:layout_marginTop="@dimen/margin_padding_30dp"
+            android:layout_marginHorizontal="@dimen/margin_padding_16dp"
+            android:layout_marginTop="@dimen/margin_padding_8dp"
+            android:id="@+id/txt_password"
+            android:background="@drawable/ic_item_continer_border_edit_style"
             android:fontFamily="@font/inter_regular"
-            android:gravity="center"
-            android:text="@string/fragment_login_phone_sms"
-            android:textColor="#A9B4B8"
-            android:textSize="@dimen/text_size_15sp" />
+            android:hint="@string/enterSomething"
+            android:padding="@dimen/margin_padding_16dp"
+            android:paddingStart="@dimen/margin_padding_24dp"
+            android:paddingEnd="@dimen/margin_padding_24dp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/dark_gray"
+            android:textSize="@dimen/text_size_14sp"/>
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/error_text"

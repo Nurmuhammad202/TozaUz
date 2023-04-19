@@ -1,18 +1,25 @@
 package uz.toza.tozauz.ui.fragment.login
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
+import dagger.hilt.android.AndroidEntryPoint
+import uz.toza.tozauz.MainActivity
 import uz.toza.tozauz.R
 import uz.toza.tozauz.databinding.FragmentLoginBinding
 
 
+@AndroidEntryPoint
 class LoginFragment : Fragment() {
     private var _binding: FragmentLoginBinding? = null
     private val binding get() = requireNotNull(_binding)
+    private val loginViewModel: LoginViewModel by viewModels()
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View {
@@ -26,7 +33,10 @@ class LoginFragment : Fragment() {
 
         binding.apply {
             btnSignIn.setOnClickListener {
-                findNavController().navigate(R.id.action_loginFragment_to_otpSmsFragment)
+                loginViewModel.setToken("Nurmuhammad")
+                requireActivity().finishAffinity()
+                startActivity(Intent(requireContext(), MainActivity::class.java))
+            // findNavController().navigate(R.id.action_loginFragment_to_otpSmsFragment)
             }
             backToHome.setOnClickListener {
                 findNavController().popBackStack()

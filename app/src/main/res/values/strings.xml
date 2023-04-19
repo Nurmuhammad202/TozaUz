@@ -14,7 +14,7 @@
     <string name="fragment_login_phone_sms">Наш номер придёт СМС с кодом подверждение</string>
     <string name="signIn">Войти</string>
     <string name="numberDoesntExist">В систему отсуствует такой номер</string>
-    <string name="enterSomething">Ввидени что-то</string>
+    <string name="enterSomething">Парол</string>
     <string name="smsBack">Вход</string>
     <string name="enterCode">Войти код-парол</string>
     <string name="sendSMStoNum">На ваш номер +998 90 568 1015\n отправлен SMS с кодо</string>
